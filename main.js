@@ -1,3 +1,18 @@
+
+
+
+Array.prototype.reshufle=function(){
+  
+let carr=this
+  let len=carr.length
+  let random=Math.floor(Math.random()*len)
+let s=carr[random]
+  carr[random]=this[0]
+  this[0]=s
+  return carr
+
+  
+}
 //list of 24 random pokemon
 
 const popularPokemon = [
@@ -29,6 +44,8 @@ const popularPokemon = [
   
  
 
+  let pokemon
+
 //selecting my html 
 let img=document.querySelector("#pokemon-image")
 let genarate=document.querySelector("#generate-button")
@@ -52,31 +69,69 @@ let link =function(pokemon){
 
 
 
-function checkAnswer() {
+// function checkAnswer() {
   
-  let submitHandler = (e) => {
-    e.preventDefault();
-    const answer = document.querySelector("#answer-input").value;
-    if (answer.toLowerCase() === pokemon) {
-      console.log("true answer");
-    } else {
-      console.log("false answer");
-    }
-  }
+//   let submitHandler = (e) => {
+//     e.preventDefault();
+//     const answer = document.querySelector("#answer-input").value;
+//     if (answer.toLowerCase() === pokemon) {
+//       console.log("true answer");
+//     } else {
+//       console.log("false answer");
+//     }
+//   }
     
   
 
-  form=document.querySelector("form")
+//   form=document.querySelector("form")
   
 
-  form.addEventListener("submit", submitHandler); // Add a new event listener
-  answer=""
+//   form.addEventListener("submit", submitHandler); // Add a new event listener
 
+
+// }
+
+
+function Options(){
+
+  let options=document.querySelector(".options")
+  let childrenoption=options.children
+  let oparray=[];
+
+  for(let i=0;i<3;i++){
+
+    oparray.push(popularPokemon[i])
+    
+  }
+  oparray.push(`${pokemon}`)
+ 
+console.log(oparray)
+  oparray=oparray.reshufle()
+  console.log(oparray)
+ 
+  for(let i=0;i<childrenoption.length;i++){
+
+    console.log(childrenoption[i].innerHTML=`<button class="opt_btn">${oparray[i]}</button>`)
+  }
+ 
 }
 
 
+function checkoption(){
 
-let pokemon
+  let mainul=document.querySelector(".options")
+  mainul.addEventListener("click",(e)=>{
+
+   if(pokemon==e.target.innerHTML){
+
+    console.log("right answer")
+    e.target.setAttribute("style","background-color:green")
+   }
+   else{
+    e.target.setAttribute("style","background-color:#C45C4B")
+   }
+  })
+}
 // genrate button ->call link by fetch
 genarate.addEventListener("click",(e)=>{
   
@@ -105,15 +160,21 @@ let api=link(pokemon)
 
   console.log(pokemon)
 
-  // document.querySelector("#answer-input").value="write answer"
+  //  document.querySelector("#answer-input").value=""
+
+
   
+  Options()
+
   
 
 
 
 })
 
-checkAnswer()
+// checkAnswer()
+
+checkoption()
 
 
 

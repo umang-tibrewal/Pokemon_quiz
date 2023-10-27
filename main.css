@@ -1,6 +1,6 @@
 body {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
+    background-color: #2C0C3C;
+    font-family:'Press Start 2P', cursive;
   }
   
   #container {
@@ -12,26 +12,29 @@ body {
   }
   
   #generate-button {
-    background-color: #FFCB05;
+    background-color: #F4AC1C;
     border: none;
     color: #333;
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 28px;
     cursor: pointer;
     border-radius: 5px;
+    width: 400px;
+    font-family:'Press Start 2P', cursive;
   }
   
   #generate-button:hover {
-    background-color: #FEAB1B;
+    background-color: #F4AC1C;
   }
   
   #pokemon-image {
-    width: 200px;
-    height: 200px;
-    margin: 20px;
+    width: 300px;
+    height: 300px;
+    margin: 40px;
+    background-color: white;
   }
   
-  #answer-form {
+  /* #answer-form {
     text-align: center;
   }
   
@@ -55,4 +58,26 @@ body {
   #submit-answer:hover {
     background-color: #FEAB1B;
   }
-  
+   */
+   ul{
+
+    list-style: none;
+    font-size: 20px;
+   }
+
+   .opt_btn{
+
+    width:500px;
+    height:50px;
+    background-color: #F4AC1C;
+    font-family:'Press Start 2P', cursive;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 3px 0  3px;
+
+    
+   }
+   .opt_btn:hover{
+    background-color: #ffc756;
+
+   }
