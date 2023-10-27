@@ -50,7 +50,10 @@ let link =function(pokemon){
   return base+pokemon
 }
 
-function checkAnswer(pokemon) {
+
+
+function checkAnswer() {
+  
   let submitHandler = (e) => {
     e.preventDefault();
     const answer = document.querySelector("#answer-input").value;
@@ -60,11 +63,14 @@ function checkAnswer(pokemon) {
       console.log("false answer");
     }
   }
+    
+  
 
   form=document.querySelector("form")
   
-  form.removeEventListener("submit", submitHandler); // Remove the previous event listener
+
   form.addEventListener("submit", submitHandler); // Add a new event listener
+  answer=""
 
 }
 
@@ -96,7 +102,7 @@ let api=link(pokemon)
   })
 
   
-  checkAnswer(pokemon)
+
   console.log(pokemon)
 
   // document.querySelector("#answer-input").value="write answer"
@@ -104,7 +110,10 @@ let api=link(pokemon)
   
 
 
+
 })
+
+checkAnswer()
 
 
 
